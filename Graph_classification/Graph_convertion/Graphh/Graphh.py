@@ -1,4 +1,4 @@
-from ..Parser.parser_utils import check_just_conteiner
+from Parser.parser_utils import check_just_conteiner
 import numpy as np
 
 

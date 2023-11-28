@@ -1,5 +1,16 @@
 import os
-from .Parser.Make_graph import make_graph_simplex_direct
+import sys
+import pathlib
+
+directory = pathlib.Path(__file__).resolve().parent
+sys.path.append(str(directory)+"Parser")
+sys.path.append(str(directory)+"Graphh")
+print(directory)
+print(sys.path)
+
+
+
+from Parser.Make_graph import make_graph_simplex_direct
 
 
 def make_graphh_dataset(path_stp, path_graph):
@@ -22,7 +33,12 @@ def make_graphh_dataset(path_stp, path_graph):
 
 
 if __name__ == "__main__":
-    path_stp = "path1"
-    path_graph = "path2"
+    path_stp = sys.argv[1]
+    path_graph = sys.argv[2]
+
+    print("input file. " + path_stp)
+    print ("output file " + path_graph)
+
+
 
     make_graphh_dataset(path_stp, path_graph)

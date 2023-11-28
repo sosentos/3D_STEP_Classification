@@ -1,10 +1,10 @@
 import time
 from pathlib import Path
-from ..Graphh.Node import FlatNode
-from ..Graphh.Node_utils import get_nodes_from_datas
-from .Parser import parse_file
-from .parser_utils import check_just_conteiner
-from ..Graphh.utils import replace_nodes
+from Graphh.Node import FlatNode
+from Graphh.Node_utils import get_nodes_from_datas
+from Parser.Parser import parse_file
+from Parser.parser_utils import check_just_conteiner
+from Graphh.utils import replace_nodes
 import networkx as nx
 import os
 
