@@ -18,6 +18,7 @@ np.random.seed(124)
 parser = ArgumentParser("GCN", formatter_class=ArgumentDefaultsHelpFormatter, conflict_handler='resolve')
 
 parser.add_argument("--run_folder", default="../", help="")
+parser.add_argument("--datasetname", default="Traceparts_6/Graphml_Models/", help="Name of the graph (.graphml) dataset.")
 parser.add_argument("--dataset", default="Traceparts_6/Graphml_Models/", help="Name of the graph (.graphml) dataset.")
 parser.add_argument("--learning_rate", default=0.0005, type=float, help="Learning rate")
 parser.add_argument("--batch_size", default=1, type=int, help="Batch Size")
@@ -29,8 +30,9 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 print("The calculations will be performed on the device:", device)
 
 # save paths
-model_name = args.dataset + "_" + str(datetime.today().strftime('%m-%d'))
-out_dir = os.path.abspath(os.path.join(args.run_folder, "./results/runs_GCN", args.dataset))
+model_name = args.datasetname + "_" + str(datetime.today().strftime('%m-%d'))
+
+out_dir = os.path.abspath(os.path.join(args.run_folder, "./results/runs_GCN", args.datasetname))
 if not os.path.exists(out_dir + "/Models/"):
     os.makedirs(out_dir + "/Models/")
 save_path = out_dir + "/Models/" + model_name
